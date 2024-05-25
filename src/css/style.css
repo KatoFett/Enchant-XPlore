@@ -1,0 +1,292 @@
+@import url("https://fonts.googleapis.com/css?family=Bebas+Neue|Asap+Condensed");
+
+:root {
+  /* colors */
+  --primary-color: #5271ff;
+  --secondary-color: #7b3e19;
+  --accent1-color: #ced0ce;
+  --accent2-color: white;
+  --headline-color-on-white: var(--primary-color);
+  --headline-color-on-color: var(--accent2-color);
+  --paragraph-color-on-white: var(--secondary-color);
+  --paragraph-color-on-color: var(--accent2-color);
+  --paragraph-background-color: var(--secondary-color);
+  --nav-link-color: var(--accent2-color);
+  --nav-background-color: var(--primary-color);
+  --nav-hover-link-color: var(--primary-color);
+  --nav-hover-background-color: var(--accent2-color);
+
+  /* fonts */
+  --heading-font: "Bebas Neue";
+  --paragraph-font: "Asap Condensed";
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: var(--paragraph-font);
+}
+
+body {
+  margin: 0;
+  max-width: 1600px;
+  margin: 0 auto;
+  background-color: var(--accent1-color);
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: var(--accent2-color);
+  padding: 1em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+  color: var(--headline-color-on-white);
+  margin: 0;
+}
+
+h1 {
+  font-size: 4em;
+}
+
+h2 {
+  font-size: 3em;
+}
+
+h3 {
+  font-size: 2em;
+}
+
+h4 {
+  font-size: 1.5em;
+}
+
+h5 {
+  font-size: 1em;
+}
+
+h6 {
+  font-size: 0.75em;
+}
+
+p {
+  font-family: var(--paragraph-font);
+  font-size: 1.5em;
+}
+
+img {
+  transition: all 0.125s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+header {
+  background-color: var(--primary-color);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  color: var(--accent2-color);
+}
+
+header > .logo-link {
+  margin: 0 2em;
+}
+
+header > .logo-link > img {
+  width: 8em;
+}
+
+header nav {
+  display: flex;
+  font-family: var(--heading-font);
+}
+
+nav .dropdown {
+  display: none;
+  position: relative;
+  left: -100%;
+  top: 50%;
+}
+
+nav .dropdown a {
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown ol {
+  position: absolute;
+  left: -2em;
+  background-color: var(--accent2-color);
+  color: initial;
+  box-shadow: 0 2px 8px 2px black;
+}
+
+nav a:hover .dropdown {
+  display: block;
+}
+
+header nav a,
+footer a {
+  color: inherit;
+  height: 100%;
+  padding: 0 2em;
+  margin: 0 1em;
+  display: flex;
+  align-items: center;
+}
+
+header nav a > *,
+footer a > * {
+  color: inherit;
+}
+
+header nav a:hover {
+  background-color: var(--accent2-color);
+  color: var(--primary-color);
+}
+
+footer {
+  background-color: var(--secondary-color);
+  color: var(--accent2-color);
+  padding: 1em 4em;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+}
+
+footer > a {
+  grid-column: 3;
+}
+
+ol {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+ol > li {
+  margin: 1em;
+}
+
+ol a {
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+ol span {
+  color: var(--accent1-color);
+}
+
+ol img {
+  width: 4em;
+  margin: 0 1em 0 0;
+}
+
+.home-hero {
+  background-image: url("../images/enchanting_table.jpg");
+  background-position-y: 34%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 4em;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: repeat(2, auto) 1fr;
+}
+
+.home-hero img {
+  grid-row: 1/3;
+  border-radius: 10%;
+  width: 10em;
+  margin: 0 2em;
+}
+
+.home-hero :nth-child(2),
+.home-hero :nth-child(3) {
+  grid-column: 2;
+  margin: auto 30px;
+}
+
+.home-hero p {
+  grid-column: 1/3;
+  grid-row: 3;
+  color: var(--accent1-color);
+}
+
+p.shadow,
+h1.shadow,
+h2.shadow,
+h3.shadow,
+h4.shadow,
+h5.shadow,
+h6.shadow {
+  text-shadow: 8px 8px 4px black;
+}
+
+:not(p, h1, h2, h3, h4, h5, h6).shadow {
+  box-shadow: 8px 8px 4px black;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.m-none {
+  margin: 0;
+}
+
+.m-t-md {
+  margin-top: 10px;
+}
+
+.m-t-lg {
+  margin-top: 25px;
+}
+
+.m-b-md {
+  margin-bottom: 10px;
+}
+
+.m-w-md {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.p-h {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.grid-half {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+}
+
+.secondary {
+  color: var(--secondary-color);
+}
