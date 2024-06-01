@@ -36,7 +36,9 @@ export async function loadHeaderFooter() {
   const header = await loadTemplate(HEADER_URL);
   const footer = await loadTemplate(FOOTER_URL);
   renderWithTemplate(header, headerElement);
-  renderWithTemplate(footer, footerElement, setCurrentYear);
+  renderWithTemplate(footer, footerElement);
+
+  setCurrentYear();
 }
 
 export function toTitleCase(str) {
@@ -49,7 +51,6 @@ export function toTitleCase(str) {
 }
 
 function setCurrentYear() {
-  const elements = document.querySelectorAll('.current-year');
-  for (e of elements)
-    e.textContent = new Date().getFullYear();
+  const year = new Date().getFullYear();
+  document.querySelectorAll('.current-year').forEach(e => e.textContent = year);
 }
