@@ -3,9 +3,11 @@ import ExternalServices from "./ExternalServices.mjs";
 import Category from "./Category.mjs";
 import Enchantment from "./Enchantment.mjs";
 
-loadHeaderFooter();
-
 (async function () {
+  // Load header and footer first
+  // We need to populate dropdowns in header
+  await loadHeaderFooter();
+
   // Database connection
   const service = new ExternalServices();
 

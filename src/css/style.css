@@ -15,7 +15,6 @@
   --nav-background-color: var(--primary-color);
   --nav-hover-link-color: var(--primary-color);
   --nav-hover-background-color: var(--accent2-color);
-
   /* fonts */
   --heading-font: "Bebas Neue";
   --paragraph-font: "Asap Condensed";
@@ -46,7 +45,6 @@ main {
   max-width: 1200px;
   margin: 0 auto;
   background-color: var(--accent2-color);
-  padding: 1em;
 }
 
 h1,
@@ -131,6 +129,7 @@ nav .dropdown a {
   background-color: var(--accent2-color);
   color: initial;
   box-shadow: 0 2px 8px 2px black;
+  width: max-content;
 }
 
 nav a:hover .dropdown {
@@ -173,7 +172,6 @@ ol {
   list-style: none;
   text-align: center;
   padding: 0;
-  max-height: 400px;
   overflow-y: scroll;
 }
 
@@ -196,31 +194,32 @@ ol img {
   margin: 0 1em 0 0;
 }
 
-.home-hero {
+.hero {
   background-image: url("../images/enchanting_table.jpg");
   background-position-y: 34%;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position-x: center;
   padding: 4em;
-  display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: repeat(2, auto) 1fr;
+  row-gap: 1em;
 }
 
-.home-hero img {
+.hero img {
   grid-row: 1/3;
   border-radius: 10%;
   width: 10em;
   margin: 0 2em;
 }
 
-.home-hero :nth-child(2),
-.home-hero :nth-child(3) {
+.hero :nth-child(2),
+.hero :nth-child(3) {
   grid-column: 2;
   margin: auto 30px;
 }
 
-.home-hero p {
+.hero p {
   grid-column: 1/3;
   grid-row: 3;
   color: var(--accent1-color);
@@ -240,53 +239,74 @@ h6.shadow {
   box-shadow: 8px 8px 4px black;
 }
 
+img:not(.no-hover):hover,
+a:hover img:not(.no-hover) {
+  transform: scale(1.25);
+}
+
 .text-center {
   text-align: center;
 }
 
-.m-none {
-  margin: 0;
-}
-
-.m-t-md {
-  margin-top: 10px;
-}
-
-.m-t-lg {
-  margin-top: 25px;
-}
-
-.m-b-md {
-  margin-bottom: 10px;
-}
-
-.m-w-md {
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-.p-h {
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
-
 .flex-center {
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-direction: column;
+  column-gap: 1em;
+}
+
+.flex-center > div {
+  flex-grow: 1;
 }
 
 .flex-row {
   flex-direction: row;
-}
-
-.grid-half {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-items: center;
+  align-items: center;
 }
 
 .secondary {
   color: var(--secondary-color);
+}
+
+section:not(.hero) {
+  padding: 1em;
+}
+
+/* Enchantment Page */
+.enchantment-level-text {
+  font-size: 1.15em;
+}
+
+.enchantment-description {
+  margin-top: 1em;
+}
+
+.enchantment-details {
+  flex-grow: 0 !important;
+}
+
+@media only screen and (min-width: 768px) {
+  .flex-center {
+    flex-direction: row;
+  }
+
+  .hero {
+    display: grid;
+  }
+
+  .grid-half {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
+
+  ol {
+    max-height: 400px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  header nav {
+    display: none;
+  }
 }
