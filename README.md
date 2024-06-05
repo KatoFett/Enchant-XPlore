@@ -21,4 +21,4 @@ Use this as a starting point to complete the WDD 330 team activity: the SleepOut
 
 ## Site URL
 
-https://jovial-sunshine-44a9e5.netlify.app/
+https://enchantxplore.netlify.app/
