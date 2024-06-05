@@ -2,7 +2,7 @@
 
 ## Description
 
-Use this as a starting point to complete the WDD 330 team activity: the SleepOutside web application. It scaffolds out a simple web app with Vite support to bundle up our assets.
+Enchant XPlore is a simple solution to a problem encountered by every Minecraft player at least once: What do all these enchantments do? This site is an enchanting index, providing up-to-date (as of 1.17) enchantment information.
 
 ## Prerequisites
 
